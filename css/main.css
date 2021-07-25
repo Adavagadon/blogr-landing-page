@@ -1,1 +1,90 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Overpass";
+}
+
+.header {
+  color: white;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+.header__link {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff525d;
+}
+
+.header__link--inversed {
+  color: white;
+}
+
+.header {
+  background: url("/images/bg-pattern-intro.svg"), linear-gradient(to right, #ff8f70, #ff3d54);
+  background-position: 40% 40%, center;
+  background-size: 300%, 100%;
+  border-bottom-left-radius: 100px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header__logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7em;
+}
+
+.header__logo img {
+  display: block;
+}
+
+.header__hamburger {
+  border: none;
+  background: center no-repeat url("/images/icon-hamburger.svg");
+  width: 40px;
+  height: 40px;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em;
+  margin-bottom: 3.5em;
+}
+
+.header__container:last-child {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header__container h1 {
+  margin-bottom: 0.5em;
+}
+
+.header__link {
+  border: 2px solid white;
+  padding: 0.6em 0.8em;
+  background: white;
+  border-radius: 100px;
+}
+
+.header__link--inversed {
+  background-color: transparent;
+}
+/*# sourceMappingURL=main.css.map */
