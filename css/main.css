@@ -32,9 +32,23 @@ body {
   color: white;
 }
 
+section h2,
+section h3 {
+  font-size: 2rem;
+  color: #1f3f5b;
+  text-align: center;
+}
+
+section p {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  text-align: center;
+  color: #4b5862;
+}
+
 .header {
   background: url("/images/bg-pattern-intro.svg"), linear-gradient(to right, #ff8f70, #ff3d54);
-  background-position: 40% 40%, center;
+  background-position: 35% 45%, center;
   background-size: 300%, 100%;
   border-bottom-left-radius: 100px;
   padding: 2em;
@@ -86,5 +100,42 @@ body {
 
 .header__link--inversed {
   background-color: transparent;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  padding: 3em;
+}
+
+section > div {
+  margin: 1.5em 0;
+}
+
+section .illustration {
+  height: 40vh;
+  max-height: 350px;
+  width: 100%;
+}
+
+section .illustration--editor {
+  background: no-repeat center url(/images/illustration-editor-mobile.svg);
+}
+
+section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+section .container h3 {
+  padding: 0 1em;
+  margin-bottom: 0.5em;
+}
+
+section .container .text-container {
+  margin-bottom: 2em;
 }
 /*# sourceMappingURL=main.css.map */
