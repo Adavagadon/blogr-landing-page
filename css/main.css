@@ -142,6 +142,10 @@ section .illustration--editor {
   background: no-repeat center/contain url(/images/illustration-editor-mobile.svg);
 }
 
+section .illustration--laptop {
+  background: no-repeat center/125% url(/images/illustration-laptop-mobile.svg);
+}
+
 section img {
   width: 95vw;
   margin-top: -70%;

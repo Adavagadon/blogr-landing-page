@@ -153,6 +153,11 @@ section {
       background: no-repeat center / contain
         url(/images/illustration-editor-mobile.svg);
     }
+
+    &--laptop {
+      background: no-repeat center / 125%
+        url(/images/illustration-laptop-mobile.svg);
+    }
   }
 
   img {
