@@ -15,6 +15,10 @@ body {
   font-family: "Overpass";
 }
 
+img {
+  display: block;
+}
+
 //Typography
 
 .header {
@@ -43,7 +47,7 @@ body {
 section {
   h2,
   h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: $very-dark-blue;
     text-align: center;
   }
@@ -53,6 +57,14 @@ section {
     line-height: 1.75;
     text-align: center;
     color: $very-dark-grayish-blue;
+  }
+
+  &.blue-gradient {
+    h2,
+    h3,
+    p {
+      color: $white;
+    }
   }
 }
 
@@ -118,19 +130,35 @@ section {
   justify-content: stretch;
   align-items: center;
   padding: 3em;
+  position: relative;
 
   & > div {
     margin: 1.5em 0;
   }
 
+  &.blue-gradient {
+    margin-top: 40vw;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    background: no-repeat center -400px / 175% url("/images/bg-pattern-circles.svg"),
+      linear-gradient(to right, $blue-gradient);
+  }
+
   .illustration {
-    height: 40vh;
+    height: 65vw;
     max-height: 350px;
     width: 100%;
 
     &--editor {
-      background: no-repeat center url(/images/illustration-editor-mobile.svg);
+      background: no-repeat center / contain
+        url(/images/illustration-editor-mobile.svg);
     }
+  }
+
+  img {
+    width: 95vw;
+    margin-top: -70%;
+    //transform: translateY(-50%);
   }
 
   .container {

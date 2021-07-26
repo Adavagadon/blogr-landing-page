@@ -8,6 +8,10 @@ body {
   font-family: "Overpass";
 }
 
+img {
+  display: block;
+}
+
 .header {
   color: white;
   text-align: center;
@@ -34,7 +38,7 @@ body {
 
 section h2,
 section h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #1f3f5b;
   text-align: center;
 }
@@ -44,6 +48,12 @@ section p {
   line-height: 1.75;
   text-align: center;
   color: #4b5862;
+}
+
+section.blue-gradient h2,
+section.blue-gradient h3,
+section.blue-gradient p {
+  color: white;
 }
 
 .header {
@@ -108,20 +118,33 @@ section {
   justify-content: stretch;
   align-items: center;
   padding: 3em;
+  position: relative;
 }
 
 section > div {
   margin: 1.5em 0;
 }
 
+section.blue-gradient {
+  margin-top: 40vw;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background: no-repeat center -400px/175% url("/images/bg-pattern-circles.svg"), linear-gradient(to right, #2c2d3f, #3f4164);
+}
+
 section .illustration {
-  height: 40vh;
+  height: 65vw;
   max-height: 350px;
   width: 100%;
 }
 
 section .illustration--editor {
-  background: no-repeat center url(/images/illustration-editor-mobile.svg);
+  background: no-repeat center/contain url(/images/illustration-editor-mobile.svg);
+}
+
+section img {
+  width: 95vw;
+  margin-top: -70%;
 }
 
 section .container {
