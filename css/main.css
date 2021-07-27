@@ -4,12 +4,25 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+button {
   font-family: "Overpass";
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 img {
   display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header {
@@ -26,13 +39,33 @@ img {
 }
 
 .header__link {
-  text-decoration: none;
   font-size: 1.5rem;
   font-weight: 600;
   color: #ff525d;
 }
 
 .header__link--inversed {
+  color: white;
+}
+
+.nav__dropdown {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav__spoiler a {
+  font-size: 1.2rem;
+  color: #4b5862;
+  font-weight: 600;
+}
+
+.nav__login {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #25252d;
+}
+
+.nav__login--red {
   color: white;
 }
 
@@ -57,7 +90,6 @@ section.blue-gradient p {
 }
 
 footer a {
-  text-decoration: none;
   font-size: 1.25rem;
 }
 
@@ -90,6 +122,16 @@ footer ul li a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 7em;
+}
+
+.header__logo-container.opened .header__hamburger {
+  background: center no-repeat url("/images/icon-close.svg");
+}
+
+.header__logo-container.opened nav {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  z-index: 10;
 }
 
 .header__logo img {
@@ -128,6 +170,89 @@ footer ul li a {
 
 .header__link--inversed {
   background-color: transparent;
+}
+
+nav {
+  width: 90%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  z-index: 0;
+  transform: translate(-50%, -120%);
+  padding: 0 2em;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+nav .nav__container {
+  margin: 2em 0;
+}
+
+nav .nav__container:first-child {
+  border-bottom: 2px solid #ebebeb;
+}
+
+nav .nav__container:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav .nav__dropdown {
+  border: none;
+  background: transparent;
+  position: relative;
+}
+
+nav .nav__dropdown.opened::after {
+  transform: translateY(-55%) rotate(180deg);
+}
+
+nav .nav__dropdown.opened + .nav__spoiler {
+  padding: 1em;
+  max-height: 1000px;
+  transform: scaleY(1);
+}
+
+nav .nav__dropdown::after {
+  transition: 0.5s;
+  content: url("/images/icon-arrow-dark.svg");
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-55%) rotate(0deg);
+}
+
+nav .nav__spoiler {
+  margin: 1em 0;
+  background: #ebebeb;
+  border-radius: 5px;
+  max-height: 0px;
+  transform: scaleY(0);
+  transform-origin: top;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+nav .nav__spoiler ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0;
+}
+
+nav .nav__login {
+  padding: 0.75em 2em;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+}
+
+nav .nav__login--red {
+  background: linear-gradient(to right, #ff8f70, #ff3d54);
 }
 
 section {
@@ -198,7 +323,6 @@ footer ul {
   display: flex;
   flex-direction: column;
   gap: 0.75em;
-  list-style: none;
   padding: 0;
 }
 

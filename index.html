@@ -10,9 +10,48 @@
 </head>
 <body>
   <header class="header">
-    <div class="header__logo-container">
+    <div class="header__logo-container opened">
       <a href="index.html" class="header__logo"><img src="images/logo.svg" alt="logo"></a>
-      <button class="header__hamburger"></button>
+      <nav>
+        <div class="nav__container">
+          <button class="nav__dropdown opened" onclick="dropdownHandler(event)">Product</button>
+          <div class="nav__spoiler">
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Marketplace</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Integrations</a></li>
+            </ul>
+          </div>
+          
+          <button class="nav__dropdown" onclick="dropdownHandler(event)">Company</button>
+          <div class="nav__spoiler">
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          
+          <button class="nav__dropdown" onclick="dropdownHandler(event)">Connect</button>
+          <div class="nav__spoiler">
+            <ul>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Newsletter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        
+      <div class="nav__container">
+        <a href="#" class="nav__login">Login</a>
+        <a href="#" class="nav__login nav__login--red">Sign Up</a>
+      </div>
+
+      </nav>
+      <button class="header__hamburger" onclick="hamburgerHandler()"></button>
     </div>
     <div class="header__container">
       <h1>A modern publishing platform</h1>
@@ -23,6 +62,8 @@
       <a href="#" class="header__link header__link--inversed">Learn More</a>
     </div>
   </header>
+
+  
 
   <section>
     <h2>Designed for the future</h2>
@@ -100,5 +141,25 @@
       </ul>
     </div>
   </footer>
+
+  <script type="text/javascript">
+    const dropdownHandler = (e) => {
+      for(i of dropdowns) {
+        i.classList.remove('opened');
+      }
+      e.target.classList.add('opened');
+    }
+
+    const hamburgerHandler = () => {
+      if(logoContainer.classList.contains('opened')) {
+        logoContainer.classList.remove('opened');
+      } else {
+        logoContainer.classList.add('opened');
+      }
+    }
+
+    const logoContainer = document.querySelector('.header__logo-container');
+    const dropdowns = document.querySelectorAll('.nav__dropdown');
+  </script>
 </body>
 </html>
