@@ -230,8 +230,7 @@ nav {
           transform: translateY(-55%) rotate(180deg);
         }
 
-        & + .nav__spoiler {
-          padding: 1em;
+        & ~ .nav__spoiler {
           max-height: 1000px;
           transform: scaleY(1);
         }
@@ -249,6 +248,7 @@ nav {
 
     &__spoiler {
       margin: 1em 0;
+      padding: 1em;
       background: $light-grayish-blue;
       border-radius: 5px;
       max-height: 0px;
@@ -288,7 +288,7 @@ section {
   }
 
   &.blue-gradient {
-    margin-top: 40vw;
+    margin-top: 30vw;
     border-top-right-radius: 100px;
     border-bottom-left-radius: 100px;
     background: no-repeat center -400px / 175% url("/images/bg-pattern-circles.svg"),
@@ -306,14 +306,14 @@ section {
     }
 
     &--laptop {
-      background: no-repeat center / 125%
+      background: no-repeat center / contain
         url(/images/illustration-laptop-mobile.svg);
     }
   }
 
   img {
-    width: 95vw;
-    margin-top: -70%;
+    width: 90vw;
+    margin-top: -60%;
     //transform: translateY(-50%);
   }
 
@@ -348,5 +348,204 @@ footer {
     li:first-child {
       margin-bottom: 1em;
     }
+  }
+}
+
+@media (min-width: 750px) {
+  section img {
+    margin-top: -45%;
+  }
+}
+
+@media (min-width: 1240px) {
+  //Typography
+
+  .header {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  .nav__dropdown,
+  .nav__login {
+    font-size: 1.2rem;
+    color: $white;
+  }
+
+  .nav__spoiler {
+    li {
+      text-align: left;
+    }
+
+    a {
+      font-size: 1rem;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  .nav__login--red {
+    color: $light-red;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .header__link {
+    &:hover {
+      color: $white;
+    }
+    &--inversed:hover {
+      color: $light-red;
+    }
+  }
+
+  footer li a {
+    font-size: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  //Layout
+
+  .header {
+    &__hamburger {
+      display: none;
+    }
+
+    nav {
+      position: static;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 1;
+      transform: translate(0, 0);
+      background: transparent;
+      box-shadow: none;
+
+      .nav {
+        &__container {
+          display: flex;
+          flex-direction: row;
+          gap: 2em;
+          border: none;
+        }
+
+        &__dropdown-container {
+          position: relative;
+          min-width: 150px;
+
+          .nav__spoiler {
+            position: absolute;
+            top: 2em;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%) scaleY(0);
+            max-height: none;
+            background: $white;
+          }
+
+          .nav__dropdown::after {
+            content: url("/images/icon-arrow-light.svg");
+            transform: rotate(0deg);
+            top: 0;
+            right: -0.5em;
+          }
+
+          &:hover {
+            .nav__spoiler {
+              transform: translateX(-50%) scaleY(1);
+            }
+
+            .nav__dropdown::after {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+
+        &__login {
+          &--red {
+            background: $white;
+            &:hover {
+              background: $very-light-red;
+            }
+          }
+        }
+      }
+    }
+
+    &__container:last-child {
+      justify-content: center;
+      gap: 2em;
+    }
+
+    &__link {
+      &:hover {
+        background: $very-light-red;
+        border: 2px solid $very-light-red;
+      }
+      &--inversed:hover {
+        background: $white;
+        border: 2px solid $white;
+      }
+    }
+  }
+
+  section {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    h2 {
+      flex: 100%;
+      margin-bottom: 2em;
+    }
+
+    .container {
+      flex: 50%;
+    }
+
+    &.editor {
+      padding: 10em 4em;
+      background: no-repeat 125% 50% / 52.5%
+        url("/images/illustration-editor-desktop.svg");
+    }
+
+    &.blue-gradient {
+      margin-top: 0;
+      background: no-repeat -50% 100% / 75% url("/images/bg-pattern-circles.svg"),
+        linear-gradient(to right, $blue-gradient);
+    }
+
+    &.laptop {
+      padding: 12em 4em;
+      background: no-repeat -20% 50% / 55% url("/images/illustration-laptop-desktop.svg");
+    }
+
+    .illustration {
+      flex: 50%;
+      max-height: 50vh;
+      background: none;
+    }
+
+    .illustration--editor {
+      order: 1;
+    }
+
+    img {
+      flex: 35%;
+      margin-top: -10%;
+      margin-bottom: -10%;
+      height: 50%;
+    }
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
   }
 }

@@ -10,45 +10,52 @@
 </head>
 <body>
   <header class="header">
-    <div class="header__logo-container opened">
+    <div class="header__logo-container">
       <a href="index.html" class="header__logo"><img src="images/logo.svg" alt="logo"></a>
       <nav>
         <div class="nav__container">
-          <button class="nav__dropdown opened" onclick="dropdownHandler(event)">Product</button>
-          <div class="nav__spoiler">
-            <ul>
-              <li><a href="#">Overview</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Marketplace</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Integrations</a></li>
-            </ul>
+          <div class="nav__dropdown-container">
+            <button class="nav__dropdown opened" onclick="dropdownHandler(event)">Product</button>
+            <div class="nav__spoiler">
+              <ul>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Integrations</a></li>
+              </ul>
+            </div>
           </div>
           
-          <button class="nav__dropdown" onclick="dropdownHandler(event)">Company</button>
-          <div class="nav__spoiler">
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
+
+          <div class="nav__dropdown-container">
+            <button class="nav__dropdown" onclick="dropdownHandler(event)">Company</button>
+            <div class="nav__spoiler">
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
           </div>
-          
-          <button class="nav__dropdown" onclick="dropdownHandler(event)">Connect</button>
-          <div class="nav__spoiler">
-            <ul>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Newsletter</a></li>
-              <li><a href="#">LinkedIn</a></li>
-            </ul>
+
+          <div class="nav__dropdown-container">
+            <button class="nav__dropdown" onclick="dropdownHandler(event)">Connect</button>
+            <div class="nav__spoiler">
+              <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         
-      <div class="nav__container">
-        <a href="#" class="nav__login">Login</a>
-        <a href="#" class="nav__login nav__login--red">Sign Up</a>
-      </div>
+        <div class="nav__container">
+          <a href="#" class="nav__login">Login</a>
+          <a href="#" class="nav__login nav__login--red">Sign Up</a>
+        </div>
 
       </nav>
       <button class="header__hamburger" onclick="hamburgerHandler()"></button>
@@ -63,9 +70,7 @@
     </div>
   </header>
 
-  
-
-  <section>
+  <section class="editor">
     <h2>Designed for the future</h2>
     <div class="illustration illustration--editor"></div>
     <div class="container">
@@ -94,7 +99,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="laptop">
     <div class="illustration illustration--laptop"></div>
     <div class="container">
       <div class="text-container">

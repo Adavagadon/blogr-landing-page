@@ -211,8 +211,7 @@ nav .nav__dropdown.opened::after {
   transform: translateY(-55%) rotate(180deg);
 }
 
-nav .nav__dropdown.opened + .nav__spoiler {
-  padding: 1em;
+nav .nav__dropdown.opened ~ .nav__spoiler {
   max-height: 1000px;
   transform: scaleY(1);
 }
@@ -228,6 +227,7 @@ nav .nav__dropdown::after {
 
 nav .nav__spoiler {
   margin: 1em 0;
+  padding: 1em;
   background: #ebebeb;
   border-radius: 5px;
   max-height: 0px;
@@ -269,7 +269,7 @@ section > div {
 }
 
 section.blue-gradient {
-  margin-top: 40vw;
+  margin-top: 30vw;
   border-top-right-radius: 100px;
   border-bottom-left-radius: 100px;
   background: no-repeat center -400px/175% url("/images/bg-pattern-circles.svg"), linear-gradient(to right, #2c2d3f, #3f4164);
@@ -286,12 +286,12 @@ section .illustration--editor {
 }
 
 section .illustration--laptop {
-  background: no-repeat center/125% url(/images/illustration-laptop-mobile.svg);
+  background: no-repeat center/contain url(/images/illustration-laptop-mobile.svg);
 }
 
 section img {
-  width: 95vw;
-  margin-top: -70%;
+  width: 90vw;
+  margin-top: -60%;
 }
 
 section .container {
@@ -328,5 +328,153 @@ footer ul {
 
 footer ul li:first-child {
   margin-bottom: 1em;
+}
+
+@media (min-width: 750px) {
+  section img {
+    margin-top: -45%;
+  }
+}
+
+@media (min-width: 1240px) {
+  .header h1 {
+    font-size: 4rem;
+  }
+  .nav__dropdown,
+  .nav__login {
+    font-size: 1.2rem;
+    color: white;
+  }
+  .nav__spoiler li {
+    text-align: left;
+  }
+  .nav__spoiler a {
+    font-size: 1rem;
+  }
+  .nav__spoiler a:hover {
+    color: black;
+  }
+  .nav__login--red {
+    color: #ff525d;
+  }
+  .nav__login--red:hover {
+    color: white;
+  }
+  .header__link:hover {
+    color: white;
+  }
+  .header__link--inversed:hover {
+    color: #ff525d;
+  }
+  footer li a {
+    font-size: 1rem;
+  }
+  footer li a:hover {
+    text-decoration: underline;
+  }
+  .header__hamburger {
+    display: none;
+  }
+  .header nav {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    transform: translate(0, 0);
+    background: transparent;
+    box-shadow: none;
+  }
+  .header nav .nav__container {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    border: none;
+  }
+  .header nav .nav__dropdown-container {
+    position: relative;
+    min-width: 150px;
+  }
+  .header nav .nav__dropdown-container .nav__spoiler {
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) scaleY(0);
+    max-height: none;
+    background: white;
+  }
+  .header nav .nav__dropdown-container .nav__dropdown::after {
+    content: url("/images/icon-arrow-light.svg");
+    transform: rotate(0deg);
+    top: 0;
+    right: -0.5em;
+  }
+  .header nav .nav__dropdown-container:hover .nav__spoiler {
+    transform: translateX(-50%) scaleY(1);
+  }
+  .header nav .nav__dropdown-container:hover .nav__dropdown::after {
+    transform: rotate(-180deg);
+  }
+  .header nav .nav__login--red {
+    background: white;
+  }
+  .header nav .nav__login--red:hover {
+    background: #ff7a85;
+  }
+  .header__container:last-child {
+    justify-content: center;
+    gap: 2em;
+  }
+  .header__link:hover {
+    background: #ff7a85;
+    border: 2px solid #ff7a85;
+  }
+  .header__link--inversed:hover {
+    background: white;
+    border: 2px solid white;
+  }
+  section {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  section h2 {
+    flex: 100%;
+    margin-bottom: 2em;
+  }
+  section .container {
+    flex: 50%;
+  }
+  section.editor {
+    padding: 10em 4em;
+    background: no-repeat 125% 50%/52.5% url("/images/illustration-editor-desktop.svg");
+  }
+  section.blue-gradient {
+    margin-top: 0;
+    background: no-repeat -50% 100%/75% url("/images/bg-pattern-circles.svg"), linear-gradient(to right, #2c2d3f, #3f4164);
+  }
+  section.laptop {
+    padding: 12em 4em;
+    background: no-repeat -20% 50%/55% url("/images/illustration-laptop-desktop.svg");
+  }
+  section .illustration {
+    flex: 50%;
+    max-height: 50vh;
+    background: none;
+  }
+  section .illustration--editor {
+    order: 1;
+  }
+  section img {
+    flex: 35%;
+    margin-top: -10%;
+    margin-bottom: -10%;
+    height: 50%;
+  }
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 }
 /*# sourceMappingURL=main.css.map */
