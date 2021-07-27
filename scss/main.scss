@@ -39,7 +39,7 @@ a {
   text-align: center;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   p {
@@ -47,7 +47,7 @@ a {
   }
 
   &__link {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: $light-red;
     &--inversed {
@@ -80,9 +80,14 @@ a {
 }
 
 section {
-  h2,
+  h2 {
+    font-size: 2.25rem;
+    color: $very-dark-blue;
+    text-align: center;
+  }
+
   h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: $very-dark-blue;
     text-align: center;
   }
@@ -132,7 +137,6 @@ footer {
   background-position: 35% 45%, center;
   background-size: 300%, 100%;
   border-bottom-left-radius: 100px;
-  padding: 2em;
   @include flex-column();
   justify-content: space-between;
 
@@ -141,6 +145,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 7em;
+    padding: 2em 2em 0;
 
     &.opened {
       .header__hamburger {
@@ -167,7 +172,7 @@ footer {
 
   &__container {
     @include flex-column();
-    padding: 0 1em;
+    padding: 0 1.75em;
     margin-bottom: 3.5em;
 
     &:last-child {
@@ -208,7 +213,7 @@ nav {
 
   .nav {
     &__container {
-      margin: 2em 0;
+      margin: 1em 0;
 
       &:first-child {
         border-bottom: 2px solid $light-grayish-blue;
@@ -233,6 +238,7 @@ nav {
         & ~ .nav__spoiler {
           max-height: 1000px;
           transform: scaleY(1);
+          padding: 1em;
         }
       }
 
@@ -247,8 +253,8 @@ nav {
     }
 
     &__spoiler {
-      margin: 1em 0;
-      padding: 1em;
+      margin: 0.5em 0;
+      padding: 0;
       background: $light-grayish-blue;
       border-radius: 5px;
       max-height: 0px;
@@ -280,7 +286,7 @@ section {
   @include flex-column();
   justify-content: stretch;
   align-items: center;
-  padding: 3em;
+  padding: 3em 1.5em;
   position: relative;
 
   & > div {
